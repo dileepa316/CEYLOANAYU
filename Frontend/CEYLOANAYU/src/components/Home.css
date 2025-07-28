@@ -1,0 +1,164 @@
+/* ✅ Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.ceylon-ayu-container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  color: #333;
+}
+
+/* 🔹 Fullscreen Video Background */
+.video-hero {
+  position: relative;
+  width: 100%;
+  height: 95vh;
+  overflow: hidden;
+}
+
+.bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* 🔹 Overlay Content on Top of Video */
+.video-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Optional dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+  z-index: 1;
+  padding-top: 100px; /* 👈 Push content below fixed header */
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.video-content h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* 🔹 Header Section (Fixed on Top) */
+.header {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 1rem 0;
+  text-align: center;
+  position: fixed;   /* 👈 FIXED to top */
+  top: 0;
+  left: 0;
+  z-index: 10;       /* 👈 High enough to stay above video */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.logo h1 {
+  font-size: 2rem;
+  color: #2a5a3b;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+/* 🔹 Navigation Bar */
+.navbar {
+  margin-top: 0.5rem;
+}
+
+.navbar .nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  gap: 1.2rem;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #2a5a3b;
+}
+
+.book-now {
+  color: #b38a58 !important;
+  font-weight: 600 !important;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 1024px) {
+  .video-content h1 {
+    font-size: 3rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .video-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .video-content h1 {
+    font-size: 1.6rem;
+    padding: 0 1rem;
+  }
+}
