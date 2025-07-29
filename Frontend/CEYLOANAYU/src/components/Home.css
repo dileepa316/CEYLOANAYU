@@ -1,5 +1,4 @@
-/* 🌿 CeylonAyu Luxury Retreat - Complete CSS */
-/* ✅ 2025 Design System with Modern Color Palette */
+
 :root {
   --primary: #b38a58;
   --primary-light: #d4b483;
@@ -15,7 +14,7 @@
   --transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* 🌙 Dark Mode Variables */
+
 .dark-mode {
   --light: #1a1a1a;
   --dark: #f8f4e9;
@@ -25,7 +24,7 @@
   --glass-dark: rgba(255, 255, 255, 0.1);
 }
 
-/* 🌀 Base Reset & Typography */
+
 * {
   margin: 0;
   padding: 0;
