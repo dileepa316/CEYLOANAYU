@@ -1,0 +1,301 @@
+/* GalleFort.css - 2025 Modern Design */
+:root {
+  --primary: #1a3e6f;
+  --secondary: #d4af37;
+  --accent: #ff5e7d;
+  --dark: #0d1a2b;
+  --light: #f0f4f8;
+  --glass: rgba(255, 255, 255, 0.15);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.galle-fort-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  color: var(--dark);
+  line-height: 1.7;
+  position: relative;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #f5f7fa 0%, #f0f4f8 100%);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  z-index: 1000;
+  transition: width 0.3s ease;
+}
+
+/* Animated Header */
+.galle-header {
+  text-align: center;
+  margin: 6rem 0 4rem;
+  position: relative;
+}
+
+.title-gradient {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  animation: fadeInUp 1s ease;
+}
+
+.subtitle-motion {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  color: var(--primary);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1rem;
+  font-weight: 400;
+}
+
+.word-motion {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: wordFadeIn 0.8s forwards;
+}
+
+.word-motion:nth-child(1) { animation-delay: 0.3s; }
+.word-motion:nth-child(2) { animation-delay: 0.5s; }
+.word-motion:nth-child(3) { animation-delay: 0.7s; }
+
+/* Parallax Gallery */
+.parallax-gallery {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  margin: 4rem 0;
+  height: 80vh;
+  min-height: 600px;
+}
+
+.main-parallax, .secondary-parallax {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
+  box-shadow: var(--glass-shadow);
+}
+
+.main-parallax {
+  grid-row: span 2;
+}
+
+.secondary-images {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+  border-radius: 16px;
+}
+
+/* Glass Morphism Cards */
+.glass-card {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  padding: 2.5rem;
+  margin: 2rem 0;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.description-section {
+  position: relative;
+  z-index: 2;
+}
+
+.content-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s 0.8s forwards;
+}
+
+/* Interactive Details */
+.interactive-section {
+  margin: 4rem 0;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.title-decoration {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+}
+
+.glow-text {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.detail-card {
+  perspective: 1000px;
+  height: 180px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  animation: fadeIn 0.5s var(--delay) forwards;
+}
+
+.detail-card:hover .card-inner {
+  transform: rotateY(10deg) scale(1.03);
+}
+
+.detail-card h3 {
+  color: var(--secondary);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* Floating CTA */
+.floating-cta {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 100;
+}
+
+.neon-button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(26, 62, 111, 0.5);
+}
+
+.neon-button:hover {
+  background: var(--accent);
+  box-shadow: 0 0 20px rgba(255, 94, 125, 0.7);
+}
+
+.hover-effect {
+  position: absolute;
+  background: white;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.neon-button:hover .hover-effect {
+  animation: ripple 0.6s linear;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes wordFadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes ripple {
+  to { transform: translate(-50%, -50%) scale(3); opacity: 0; }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .parallax-gallery {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: auto;
+  }
+  
+  .main-parallax {
+    height: 60vh;
+  }
+  
+  .secondary-images {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .galle-header {
+    margin: 4rem 0 3rem;
+  }
+  
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .secondary-images {
+    grid-template-columns: 1fr;
+  }
+  
+  .floating-cta {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
