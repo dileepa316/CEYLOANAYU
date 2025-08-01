@@ -2,13 +2,15 @@ import React, { useState, useEffect } from "react";
 import "./Home.css";
 import homeVideo from "../assets/Home.mp4";
 import logoImage from "../assets/navigation.jpg";
-import { FiMenu, FiX, FiUser, FiLogIn } from "react-icons/fi";
-import { FaLeaf, FaSpa, FaMoon, FaSun } from "react-icons/fa";
+import { FiMenu, FiX, FiUser, FiLogIn, FiArrowRight } from "react-icons/fi";
+import { FaLeaf, FaSpa, FaMoon, FaSun, FaYoutube, FaInstagram, FaTripadvisor } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const CeylonAyu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,14 +22,7 @@ const CeylonAyu = () => {
 
   return (
     <div className={`ceylon-ayu-container ${darkMode ? "dark-mode" : ""}`}>
-      {/* Floating Nature Elements */}
-      <div className="floating-elements">
-        <div className="floating-leaf floating-leaf-1"><FaLeaf /></div>
-        <div className="floating-leaf floating-leaf-2"><FaLeaf /></div>
-        <div className="floating-leaf floating-leaf-3"><FaLeaf /></div>
-      </div>
-
-      {/* Video Hero Section */}
+      {/* Video Hero Section (top) */}
       <div className="video-hero">
         <video autoPlay loop muted playsInline className="bg-video">
           <source src={homeVideo} type="video/mp4" />
@@ -54,14 +49,20 @@ const CeylonAyu = () => {
               
               {/* Auth Buttons */}
               <li className="auth-buttons">
-                <a href="#login" className="login-btn">
+                <button
+                  className="login-btn"
+                  onClick={() => navigate("/Login")}
+                >
                   <FiLogIn className="auth-icon" />
                   <span>Login</span>
-                </a>
-                <a href="#signup" className="signup-btn">
+                </button>
+                <button
+                  className="signup-btn"
+                  onClick={() => navigate("/Signup")}
+                >
                   <FiUser className="auth-icon" />
                   <span>Sign Up</span>
-                </a>
+                </button>
               </li>
               
               <li>
@@ -105,6 +106,83 @@ const CeylonAyu = () => {
           </div>
         </div>
       </div>
+
+      {/* Description Section (middle) */}
+      <section className="description-section">
+        <div className="description-container">
+          <div className="description-content">
+            <h2 className="description-title">
+              Ceylon Ayu – Ayurveda Wellness Retreat in Sri Lanka
+            </h2>
+            <p className="description-text">
+              At Ceylon Ayu, we understand that life rarely stands still. That's why we've created a sanctuary where even the busiest souls can pause, heal, and restore. Nestled in the lush serenity of Sri Lanka, our retreat offers authentic Ayurvedic treatments, personalized Panchakarma programs, daily yoga, and dosha-aligned meals — all designed to bring you back to balance, even if just for a while.
+            </p>
+            <div className="description-features">
+              <div className="feature">
+                <div className="feature-icon"><FaSpa /></div>
+                <h3>Authentic Ayurveda</h3>
+                <p>Traditional treatments by certified practitioners</p>
+              </div>
+              <div className="feature">
+                <div className="feature-icon"><FaLeaf /></div>
+                <h3>Holistic Wellness</h3>
+                <p>Yoga, meditation, and nature immersion</p>
+              </div>
+              <div className="feature">
+                <div className="feature-icon">🍃</div>
+                <h3>Sustainable Luxury</h3>
+                <p>Eco-conscious practices meet modern comfort</p>
+              </div>
+            </div>
+            <button className="discover-btn">
+              Discover Our Retreat <FiArrowRight />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer (bottom) */}
+      <footer className="footer">
+        <div className="footer-container">
+          <div className="footer-logo">
+            <img src={logoImage} alt="CeylonAyu Logo" className="footer-logo-image" />
+            <span className="footer-logo-text">CEYLON AYU</span>
+          </div>
+          <div className="footer-links">
+            <div className="footer-column">
+              <h4>Explore</h4>
+              <a href="#experience">Experience</a>
+              <a href="#accommodation">Accommodation</a>
+              <a href="#wellness">Wellness</a>
+              <a href="#sustainability">Sustainability</a>
+            </div>
+            <div className="footer-column">
+              <h4>Information</h4>
+              <a href="#offers">Special Offers</a>
+              <a href="#contact">Contact Us</a>
+              <a href="#faq">FAQ</a>
+              <a href="#blog">Blog</a>
+            </div>
+            <div className="footer-column">
+              <h4>Legal</h4>
+              <a href="#terms">Terms & Conditions</a>
+              <a href="#privacy">Privacy Policy</a>
+              <a href="#cookies">Cookie Policy</a>
+            </div>
+          </div>
+          <div className="footer-social">
+            <h4>Follow Us</h4>
+            <div className="social-icons">
+              <a href="#instagram" aria-label="Instagram"><FaInstagram /></a>
+              <a href="#youtube" aria-label="YouTube"><FaYoutube /></a>
+              <a href="#tripadvisor" aria-label="TripAdvisor"><FaTripadvisor /></a>
+            </div>
+            <p className="copyright">
+              © {new Date().getFullYear()} Ceylon Ayu. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };

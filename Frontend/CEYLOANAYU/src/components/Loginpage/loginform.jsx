@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./loginform.css";
-import loginImage from "../../assets/login.jpg"; // <-- Corrected path
+import loginImage from "../../assets/LLogin.jpg"; // <-- Updated path
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
@@ -57,7 +57,10 @@ const LoginForm = () => {
           </button>
 
           <p className="login-footer">
-            Don't have an account? <a className="signup-link" href="#">Sign up</a>
+            Don't have an account?{" "}
+            <a className="signup-link" href="#">
+              Sign up
+            </a>
           </p>
         </form>
       </div>
