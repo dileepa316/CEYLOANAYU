@@ -1,7 +1,5 @@
 import React from "react";
 import "./SurfingWeligama.css";
-
-// Make sure these images are in src/assets/
 import experience1 from "../../assets/Experience1.jpg";
 import surf1 from "../../assets/surfying1.jpg"; 
 import surf2 from "../../assets/surfying2.jpg";
@@ -41,6 +39,36 @@ const SurfingWeligama = () => {
           <div className="image-container">
             <img src={surf2} alt="Surfing lessons in Weligama" />
           </div>
+        </div>
+      </div>
+
+      {/* Added content from image exactly as shown */}
+      <div className="good-to-know-section">
+        <h2>Good to Know</h2>
+        <p>
+          The rush of surfing your first wave will be a core memory that you will take back with you!
+        </p>
+        <p>
+          The experience provides valuable employment for the local community.
+        </p>
+        
+        <div className="divider"></div>
+        
+        <div className="details-section">
+          <h3>TYPE</h3>
+          <p>Sports</p>
+          
+          <h3>DURATION</h3>
+          <p>Approx. 1 hour.</p>
+          
+          <h3>DIFFICULTY</h3>
+          <p>For beginners</p>
+          
+          <h3>WHAT TO WEAR</h3>
+          <p>Bring your own rash guard if available, we recommend reef safe sunscreen.</p>
+          
+          <h3>INCLUDES</h3>
+          <p>Instructor, rash guard, board & transport to location.</p>
         </div>
       </div>
     </div>
