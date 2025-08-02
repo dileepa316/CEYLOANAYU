@@ -7,33 +7,19 @@ import galle2 from "../../assets/Galle2.jpg";
 const GalleFort = () => {
   return (
     <div className="galle-fort-container">
-      {/* Floating Navigation Indicator */}
-      <div className="scroll-indicator"></div>
-
       {/* Animated Header */}
-      <header className="galle-header">
-        <h1 className="title-gradient">Discover the Dutch Fort in Galle</h1>
-        <h2 className="subtitle-motion">
-          <span className="word-motion">Discover</span>
-          <span className="word-motion">the secrets</span>
-          <span className="word-motion">of Galle Fort</span>
-        </h2>
+      <header className="page-header">
+        <h1>Discover the Dutch Fort in Galle</h1>
+        <p className="tagline">A Historical Gem in Sri Lanka</p>
+        <p className="intro">
+          Step back in time as you explore this UNESCO World Heritage Site with its 
+          colonial architecture and fascinating history.
+        </p>
       </header>
 
-      {/* Parallax Image Gallery */}
-      <div className="parallax-gallery">
-        <div className="main-parallax" style={{ backgroundImage: `url(${galleMain})` }}>
-          <div className="image-overlay"></div>
-        </div>
-        <div className="secondary-images">
-          <div className="secondary-parallax" style={{ backgroundImage: `url(${galle1})` }}></div>
-          <div className="secondary-parallax" style={{ backgroundImage: `url(${galle2})` }}></div>
-        </div>
-      </div>
-
-      {/* Glass Morphism Description */}
-      <div className="glass-card description-section">
-        <div className="content-reveal">
+      <div className="content-section">
+        {/* Description */}
+        <div className="description">
           <p>
             Experience Galle Fort's wonders with a local English-speaking guide, 
             intimately acquainted with its hidden gems and captivating history. 
@@ -42,11 +28,22 @@ const GalleFort = () => {
             and one of the globe's most immaculately preserved forts.
           </p>
         </div>
-      </div>
 
-      {/* Interactive Details Section */}
-      <div className="interactive-section">
-        <div className="good-to-know glass-card">
+        {/* Image Gallery */}
+        <div className="image-gallery">
+          <div className="image-container">
+            <img src={galleMain} alt="Main view of Galle Fort" />
+          </div>
+          <div className="image-container">
+            <img src={galle1} alt="Street view in Galle Fort" />
+          </div>
+          <div className="image-container">
+            <img src={galle2} alt="Historic buildings in Galle Fort" />
+          </div>
+        </div>
+
+        {/* Good to Know Section */}
+        <div className="description">
           <h2 className="section-title">
             <span className="title-decoration"></span>
             Good to Know
@@ -56,36 +53,28 @@ const GalleFort = () => {
             Lovers of architecture will really enjoy the Dutch architecture of the buildings in the fort.
             We recommend walking the ramparts at sunset for the best views!
           </p>
-        </div>
 
-        <div className="details-grid">
-          {[
-            { title: "TYPE", content: "Approx. 4 hours" },
-            { title: "DURATION", content: "Approx. 4 hours" },
-            { title: "DIFFICULTY", content: "Easy" },
-            { title: "WHAT TO WEAR", content: "Light airy clothes, cap & sunglasses" },
-            { title: "INCLUDES", content: "Experienced guide & transport" }
-          ].map((item, index) => (
-            <div 
-              key={index} 
-              className="detail-card"
-              style={{ '--delay': index * 0.1 + 's' }}
-            >
-              <div className="card-inner">
-                <h3>{item.title}</h3>
-                <p>{item.content}</p>
+          <div className="details-grid">
+            {[
+              { title: "TYPE", content: "Approx. 4 hours" },
+              { title: "DURATION", content: "Approx. 4 hours" },
+              { title: "DIFFICULTY", content: "Easy" },
+              { title: "WHAT TO WEAR", content: "Light airy clothes, cap & sunglasses" },
+              { title: "INCLUDES", content: "Experienced guide & transport" }
+            ].map((item, index) => (
+              <div 
+                key={index} 
+                className="detail-card"
+                style={{ '--delay': index * 0.1 + 's' }}
+              >
+                <div className="card-inner">
+                  <h3>{item.title}</h3>
+                  <p>{item.content}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-
-      {/* Floating CTA */}
-      <div className="floating-cta">
-        <button className="neon-button">
-          Book Your Experience
-          <span className="hover-effect"></span>
-        </button>
       </div>
     </div>
   );
