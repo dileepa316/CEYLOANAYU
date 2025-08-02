@@ -1,24 +1,84 @@
+/* Combined Surf & Ayurvedic Color Scheme */
 :root {
-  --primary: #1a3e6f;
-  --secondary: #d4af37;
-  --accent: #ff5e7d;
-  --dark: #0d1a2b;
-  --light: #f0f4f8;
-  --glass: rgba(255, 255, 255, 0.15);
+  /* Ayurvedic Color Palette */
+  --primary: #b38a58;       /* Warm earthy gold */
+  --primary-light: #d4b483; /* Lighter gold */
+  --primary-dark: #8a6d3b;  /* Darker gold */
+  --secondary: #3a5a40;     /* Nature green */
+  --accent: #a5a58d;       /* Soft sage */
+  
+  /* Surf Color Palette */
+  --ocean-blue: #1a6b8c;    /* Deep ocean blue */
+  --sunset-orange: #f4a261; /* Warm sunset orange */
+  --sand-tan: #e9c46a;      /* Sandy tan */
+  --wave-teal: #2a9d8f;     /* Vibrant teal */
+  
+  /* Neutrals */
+  --dark: #1a1a1a;         /* Rich black */
+  --light: #f8f4e9;        /* Creamy white */
+  --text-light: #f8f4e9;
+  --text-dark: #1a1a1a;
+  
+  /* Effects */
+  --glass: rgba(255, 255, 255, 0.1);
+  --glass-dark: rgba(0, 0, 0, 0.2);
   --glass-border: rgba(255, 255, 255, 0.2);
   --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  
+  /* Transitions */
+  --transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+/* Base Container */
 .galle-fort-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1rem;
-  color: var(--dark);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fff;
+  color: var(--text-dark);
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--light);
 }
 
-/* Header Section */
+/* SURF TEXT STYLES */
+.surf-title {
+  color: var(--ocean-blue);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.surf-tagline {
+  color: var(--sunset-orange);
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.8rem;
+  margin: 0.5rem 0;
+}
+
+.surf-divider {
+  border: none;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    var(--wave-teal), 
+    transparent);
+  margin: 1.5rem auto;
+  width: 80%;
+}
+
+.surf-intro {
+  color: var(--text-dark);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* AYURVEDIC HEADER STYLES */
 .page-header {
   text-align: center;
   margin-bottom: 3rem;
@@ -27,38 +87,53 @@
 }
 
 .page-header h1 {
+  font-family: 'Playfair Display', serif;
   font-size: 2.75rem;
-  color: var(--primary);
+  color: var(--primary-dark);
   margin-bottom: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .tagline {
+  font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
   font-style: italic;
-  color: var(--secondary);
+  color: var(--primary);
   margin-bottom: 1rem;
+  font-weight: 400;
 }
 
 .intro {
   font-size: 1.15rem;
   max-width: 850px;
   margin: 0 auto;
-  color: #555;
+  color: var(--text-dark);
+  opacity: 0.9;
+  line-height: 1.7;
 }
 
-/* Content Section */
+/* COMMON CONTENT STYLES */
 .content-section {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-/* Description */
 .description {
-  background-color: #f8f9fa;
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   padding: 1.5rem 2rem;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  transition: var(--transition);
+}
+
+.description:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(179, 138, 88, 0.25);
 }
 
 .description p {
@@ -66,7 +141,6 @@
   line-height: 1.8;
 }
 
-/* Image Gallery */
 .image-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -78,48 +152,49 @@
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: var(--transition);
+  position: relative;
 }
 
 .image-container:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-6px) rotateX(2deg);
+  box-shadow: 0 8px 16px rgba(179, 138, 88, 0.3);
 }
 
 .image-container img {
   width: 100%;
   height: auto;
   display: block;
-  transition: transform 0.3s ease;
+  transition: var(--transition);
   border-radius: 10px;
 }
 
-.image-container img:hover {
-  transform: scale(1.03);
+.image-container:hover img {
+  transform: scale(1.05);
 }
 
-/* Section Title */
 .section-title {
   display: flex;
   align-items: center;
   gap: 1rem;
+  font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
-  color: var(--primary);
+  color: var(--primary-dark);
   margin-bottom: 1.5rem;
   text-align: center;
+  font-weight: 500;
 }
 
 .title-decoration {
   flex: 1;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
 }
 
 .glow-text {
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0 10px rgba(248, 244, 233, 0.5);
 }
 
-/* Details Grid */
 .details-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -144,6 +219,7 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   opacity: 0;
   animation: fadeIn 0.5s var(--delay) forwards;
+  border: 1px solid var(--glass-border);
 }
 
 .detail-card:hover .card-inner {
@@ -151,28 +227,45 @@
 }
 
 .detail-card h3 {
-  color: var(--secondary);
+  color: var(--primary);
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
   font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
-/* Animations */
+.detail-card p {
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ANIMATIONS */
 @keyframes fadeIn {
-  to { opacity: 1; }
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
-  .page-header h1 {
+  .page-header h1,
+  .surf-title {
     font-size: 2rem;
   }
 
-  .tagline {
+  .tagline,
+  .surf-tagline {
     font-size: 1.2rem;
   }
 
-  .intro {
+  .intro,
+  .surf-intro {
     font-size: 1rem;
   }
 
@@ -182,5 +275,17 @@
 
   .image-gallery {
     grid-template-columns: 1fr;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .surf-divider {
+    width: 60%;
   }
 }

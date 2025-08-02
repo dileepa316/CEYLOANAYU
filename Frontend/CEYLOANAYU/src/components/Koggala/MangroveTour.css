@@ -1,0 +1,253 @@
+/* Mangrove Tour Styles */
+:root {
+  --primary: #4a6b3d;       /* Mangrove green */
+  --primary-light: #6d8b5a; /* Lighter green */
+  --primary-dark: #2d4a22;  /* Darker green */
+  --secondary: #a67c52;     /* Cinnamon brown */
+  --accent: #8ba888;       /* Sage green */
+  --dark: #1a1a1a;         /* Rich black */
+  --light: #f5f5f0;        /* Creamy white */
+  --text-light: #f5f5f0;
+  --text-dark: #1a1a1a;
+  
+  --glass: rgba(255, 255, 255, 0.1);
+  --glass-dark: rgba(0, 0, 0, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  
+  --transition: all 0.4s ease;
+}
+
+.tour-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  color: var(--text-dark);
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--light);
+}
+
+/* Header Section */
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--secondary);
+}
+
+.page-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.tagline {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--secondary);
+  margin-bottom: 1rem;
+}
+
+.intro {
+  font-size: 1.15rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--text-dark);
+  line-height: 1.7;
+}
+
+/* Content Section */
+.content-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.description {
+  background: var(--glass);
+  backdrop-filter: blur(8px);
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  transition: var(--transition);
+}
+
+.description:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(74, 107, 61, 0.15);
+}
+
+.description p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+}
+
+/* Image Gallery */
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.image-container {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+  position: relative;
+}
+
+.image-container:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(74, 107, 61, 0.2);
+}
+
+.image-container img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  transition: var(--transition);
+}
+
+.image-container:hover img {
+  transform: scale(1.05);
+}
+
+/* Interactive Section */
+.interactive-section {
+  margin: 4rem 0;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: var(--primary-dark);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.title-decoration {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+}
+
+.glow-text {
+  text-shadow: 0 0 8px rgba(245, 245, 240, 0.4);
+}
+
+/* Details Grid */
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.detail-card {
+  perspective: 1000px;
+  height: 180px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  animation: fadeIn 0.5s var(--delay) forwards;
+  border-left: 4px solid var(--secondary);
+}
+
+.detail-card:hover .card-inner {
+  transform: rotateY(8deg) scale(1.02);
+}
+
+.detail-card h3 {
+  color: var(--secondary);
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.detail-card p {
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Glass Card */
+.glass-card {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  padding: 2rem;
+  margin: 2rem 0;
+  transition: var(--transition);
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(74, 107, 61, 0.15);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+  }
+
+  .intro {
+    font-size: 1rem;
+  }
+
+  .description p {
+    font-size: 1rem;
+  }
+
+  .image-gallery {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .image-container img {
+    height: 250px;
+  }
+}
