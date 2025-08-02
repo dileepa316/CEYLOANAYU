@@ -42,33 +42,38 @@ const SurfingWeligama = () => {
         </div>
       </div>
 
-      {/* Added content from image exactly as shown */}
-      <div className="good-to-know-section">
-        <h2>Good to Know</h2>
-        <p>
-          The rush of surfing your first wave will be a core memory that you will take back with you!
-        </p>
-        <p>
-          The experience provides valuable employment for the local community.
-        </p>
-        
-        <div className="divider"></div>
-        
-        <div className="details-section">
-          <h3>TYPE</h3>
-          <p>Sports</p>
-          
-          <h3>DURATION</h3>
-          <p>Approx. 1 hour.</p>
-          
-          <h3>DIFFICULTY</h3>
-          <p>For beginners</p>
-          
-          <h3>WHAT TO WEAR</h3>
-          <p>Bring your own rash guard if available, we recommend reef safe sunscreen.</p>
-          
-          <h3>INCLUDES</h3>
-          <p>Instructor, rash guard, board & transport to location.</p>
+      <div className="interactive-section">
+        <div className="good-to-know glass-card">
+          <h2 className="section-title">
+            <span className="title-decoration"></span>
+            Good to Know
+            <span className="title-decoration"></span>
+          </h2>
+          <p className="glow-text">
+            Lovers of architecture will really enjoy the Dutch architecture of the buildings in the fort.
+            We recommend walking the ramparts at sunset for the best views!
+          </p>
+        </div>
+
+        <div className="details-grid">
+          {[
+            { title: "TYPE", content: "Approx. 4 hours" },
+            { title: "DURATION", content: "Approx. 4 hours" },
+            { title: "DIFFICULTY", content: "Easy" },
+            { title: "WHAT TO WEAR", content: "Light airy clothes, cap & sunglasses" },
+            { title: "INCLUDES", content: "Experienced guide & transport" }
+          ].map((item, index) => (
+            <div 
+              key={index} 
+              className="detail-card"
+              style={{ '--delay': index * 0.1 + 's' }}
+            >
+              <div className="card-inner">
+                <h3>{item.title}</h3>
+                <p>{item.content}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
