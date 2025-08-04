@@ -85,7 +85,7 @@ body {
   100% { transform: translateY(0) rotate(360deg); }
 }
 
-/* 🎥 Cinematic Video Background */
+/* 🎥 Full Screen Cinematic Video Background */
 .video-hero {
   width: 100%;
   height: 100vh;
@@ -179,7 +179,7 @@ body {
 
 .scroll-indicator {
   position: absolute;
-  bottom: -80px;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -213,12 +213,13 @@ body {
   }
 }
 
-/* 💎 Luxury Navigation Bar */
+/* 💎 Consistent Luxury Navigation Bar */
 .header {
   width: 100%;
+  height: 80px;
   background: var(--glass);
   backdrop-filter: blur(12px);
-  padding: 1rem 3rem;
+  padding: 0 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -231,7 +232,6 @@ body {
 }
 
 .header.scrolled {
-  padding: 0.8rem 3rem;
   background: rgba(26, 26, 26, 0.95);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
@@ -249,6 +249,7 @@ body {
   cursor: pointer;
   transition: var(--transition);
   z-index: 101;
+  height: 100%;
 }
 
 .logo-image {
@@ -278,13 +279,15 @@ body {
 .navbar {
   display: flex;
   align-items: center;
+  height: 100%;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 1.2rem;
+  gap: 1.5rem;
   align-items: center;
+  height: 100%;
 }
 
 .nav-link {
@@ -300,6 +303,7 @@ body {
   display: flex;
   align-items: center;
   font-family: 'Montserrat', sans-serif;
+  height: 100%;
 }
 
 .dark-mode .nav-link {
@@ -317,7 +321,7 @@ body {
   bottom: 0;
   left: 0;
   width: 0;
-  height: 1px;
+  height: 2px;
   background: var(--primary);
   transition: var(--transition);
 }
@@ -334,7 +338,9 @@ body {
 .auth-buttons {
   display: flex;
   gap: 1rem;
-  margin: 0 1rem;
+  margin-left: 1rem;
+  height: 100%;
+  align-items: center;
 }
 
 .login-btn, .signup-btn {
@@ -401,6 +407,7 @@ body {
   border-radius: 50px;
   font-weight: 500;
   letter-spacing: 1px;
+  margin-left: 1rem;
 }
 
 .book-now-text {
@@ -441,6 +448,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 1rem;
 }
 
 .dark-mode .theme-toggle {
@@ -462,6 +470,7 @@ body {
   cursor: pointer;
   z-index: 101;
   transition: var(--transition);
+  margin-left: 1rem;
 }
 
 .dark-mode .menu-toggle {
@@ -477,7 +486,7 @@ body {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  min-height: 50vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -526,47 +535,6 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-.description-features {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin: 4rem 0;
-}
-
-.feature {
-  flex: 1;
-  min-width: 250px;
-  padding: 2rem;
-  background: var(--glass);
-  backdrop-filter: blur(5px);
-  border-radius: 10px;
-  transition: var(--transition);
-}
-
-.feature:hover {
-  transform: translateY(-10px);
-  background: var(--glass-dark);
-}
-
-.feature-icon {
-  font-size: 2.5rem;
-  color: var(--primary);
-  margin-bottom: 1rem;
-}
-
-.feature h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  font-family: 'Playfair Display', serif;
-}
-
-.feature p {
-  font-size: 0.9rem;
-  opacity: 0.8;
-  font-family: 'Montserrat', sans-serif;
-}
-
 .discover-btn {
   padding: 1rem 2rem;
   background: var(--primary);
@@ -590,7 +558,7 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer Styles */
+/* New Footer Styles */
 .footer {
   width: 100%;
   background-color: var(--secondary);
@@ -598,48 +566,83 @@ body {
   padding: 4rem 2rem 2rem;
   position: relative;
   flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-.footer-container {
+.footer-content {
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 3rem;
 }
 
-.footer-logo {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1.5rem;
-}
-
-.footer-logo-image {
-  height: 40px;
-  width: auto;
-  border-radius: 50%;
-  margin-right: 10px;
-  border: 1px solid var(--primary);
-}
-
-.footer-logo-text {
-  font-family: 'Playfair Display', serif;
-  letter-spacing: 2px;
+.footer-mission {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
   font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.9;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.footer-links {
+.newsletter-section {
+  margin-top: 3rem;
+}
+
+.newsletter-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Playfair Display', serif;
+}
+
+.newsletter-form {
   display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
+  max-width: 500px;
+  margin: 0 auto;
+  border: 1px solid var(--primary);
+  border-radius: 50px;
+  overflow: hidden;
 }
 
-.footer-column {
+.newsletter-form input {
   flex: 1;
-  min-width: 150px;
+  padding: 1rem;
+  border: none;
+  background: var(--light);
+  color: var(--text-dark);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.newsletter-form input::placeholder {
+  color: var(--primary-dark);
+  opacity: 0.7;
+}
+
+.submit-btn {
+  padding: 1rem 2rem;
+  background: var(--primary);
+  color: var(--text-dark);
+  border: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.submit-btn:hover {
+  background: var(--primary-light);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-top: 3rem;
 }
 
 .footer-column h4 {
@@ -660,10 +663,16 @@ body {
   background: var(--primary);
 }
 
-.footer-column a {
-  display: block;
-  color: var(--text-light);
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column li {
   margin-bottom: 0.8rem;
+}
+
+.footer-column a {
+  color: var(--text-light);
   text-decoration: none;
   transition: var(--transition);
   font-family: 'Montserrat', sans-serif;
@@ -677,15 +686,24 @@ body {
   padding-left: 5px;
 }
 
-.footer-social {
+.footer-contact {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  margin-top: 3rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .social-icons {
   display: flex;
   gap: 1.5rem;
-  margin: 1.5rem 0;
   font-size: 1.5rem;
 }
 
@@ -702,7 +720,6 @@ body {
 .copyright {
   font-size: 0.8rem;
   opacity: 0.6;
-  margin-top: auto;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -717,14 +734,14 @@ body {
   }
   
   .auth-buttons {
-    margin: 0 1rem;
+    margin-left: 0.5rem;
     gap: 0.8rem;
   }
 }
 
 @media (max-width: 992px) {
   .header {
-    padding: 1rem 2rem;
+    padding: 0 2rem;
   }
   
   .video-title {
@@ -735,7 +752,7 @@ body {
   .auth-buttons {
     flex-direction: column;
     gap: 0.6rem;
-    margin: 0 0.5rem;
+    margin-left: 0;
   }
   
   .login-btn, .signup-btn {
@@ -751,23 +768,14 @@ body {
     font-size: 2rem;
   }
   
-  .description-features {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  .footer-container {
-    grid-template-columns: 1fr;
-  }
-  
-  .footer-links {
+  .footer-content {
     gap: 2rem;
   }
 }
 
 @media (max-width: 768px) {
   .header {
-    padding: 1rem;
+    padding: 0 1rem;
   }
   
   .navbar {
@@ -800,18 +808,22 @@ body {
     gap: 2rem;
     width: 100%;
     padding: 0 2rem;
+    height: auto;
   }
   
   .nav-link {
     font-size: 1.1rem;
     justify-content: center;
     padding: 0.8rem 0;
+    height: auto;
   }
   
   .auth-buttons {
     width: 100%;
     margin: 1rem 0;
     gap: 1rem;
+    flex-direction: column;
+    height: auto;
   }
   
   .login-btn, .signup-btn {
@@ -822,7 +834,7 @@ body {
   }
   
   .book-now {
-    margin-top: 1rem;
+    margin: 1rem 0 0;
     width: 100%;
     justify-content: center;
   }
@@ -838,6 +850,25 @@ body {
   
   .title-subline {
     font-size: 1rem;
+  }
+  
+  .theme-toggle {
+    margin-left: 0;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+    border-radius: 10px;
+  }
+  
+  .newsletter-form input,
+  .submit-btn {
+    width: 100%;
+    border-radius: 0;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -866,7 +897,19 @@ body {
     font-size: 1rem;
   }
   
-  .feature {
-    min-width: 100%;
+  .scroll-indicator {
+    bottom: 20px;
   }
-} 
+  
+  .footer {
+    padding: 3rem 1.5rem 2rem;
+  }
+  
+  .footer-mission {
+    font-size: 1rem;
+  }
+  
+  .newsletter-section h3 {
+    font-size: 1.1rem;
+  }
+}
