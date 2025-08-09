@@ -1212,6 +1212,6 @@ body {
   
   .legal-links {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.10rem;
   }
 }
