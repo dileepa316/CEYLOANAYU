@@ -3,8 +3,30 @@ import "./Home.css";
 import homeVideo from "../assets/Home.mp4";
 import logoImage from "../assets/navigation.jpg";
 import wellnessImage from "../assets/hm-wellness.avif";
+
+import { 
+  FiMenu, 
+  FiX, 
+  FiUser, 
+  FiLogIn, 
+  FiArrowRight, 
+  FiClock, 
+  FiHome, 
+  FiHeart 
+} from "react-icons/fi";
+import { 
+  FaLeaf, 
+  FaSpa, 
+  FaMoon, 
+  FaSun, 
+  FaYoutube, 
+  FaInstagram, 
+  FaTripadvisor, 
+  FaFacebook 
+} from "react-icons/fa";
 import { FiMenu, FiX, FiUser, FiLogIn, FiArrowRight, FiClock, FiHome, FiHeart } from "react-icons/fi";
 import { FaLeaf, FaSpa, FaMoon, FaSun, FaYoutube, FaInstagram, FaTripadvisor } from "react-icons/fa";
+
 import { useNavigate } from "react-router-dom";
 
 const CeylonAyu = () => {
@@ -37,16 +59,16 @@ const CeylonAyu = () => {
           Your browser does not support the video tag.
         </video>
 
-        {/* 2025 Luxury Navigation Bar */}
+        {/* Navigation Bar */}
         <header className={`header ${isScrolled ? "scrolled" : ""} ${isMenuOpen ? "menu-open" : ""}`}>
           <nav className="navbar">
-            {/* Animated Logo */}
+            {/* Logo */}
             <div className="logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
               <img src={logoImage} alt="CeylonAyu Logo" className="logo-image" />
               <span className="logo-text">CEYLON AYU</span>
             </div>
 
-            {/* Main Navigation */}
+            {/* Navigation Links */}
             <ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
               <li><a href="#experience" className="nav-link"><FaSpa className="nav-icon" /> Experience</a></li>
               <li><a href="#accommodation" className="nav-link">Accommodation</a></li>
@@ -59,14 +81,14 @@ const CeylonAyu = () => {
               <li className="auth-buttons">
                 <button
                   className="login-btn"
-                  onClick={() => navigate("/Login")}
+                  onClick={() => navigate("/login")}
                 >
                   <FiLogIn className="auth-icon" />
                   <span>Login</span>
                 </button>
                 <button
                   className="signup-btn"
-                  onClick={() => navigate("/Signup")}
+                  onClick={() => navigate("/signup")}
                 >
                   <FiUser className="auth-icon" />
                   <span>Sign Up</span>
@@ -101,7 +123,7 @@ const CeylonAyu = () => {
           </nav>
         </header>
 
-        {/* Hero Content with Subtle Animation */}
+        {/* Hero Content */}
         <div className="video-content">
           <div className="title-wrapper">
             <h1 className="video-title">
@@ -203,7 +225,11 @@ const CeylonAyu = () => {
         </div>
       </section>
 
+
+      {/* Footer */}
+
       {/* 2025 Luxury Footer */}
+
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-top">

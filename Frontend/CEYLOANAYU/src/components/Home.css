@@ -47,7 +47,7 @@ body {
   line-height: 1.6;
 }
 
-/* 🍃 Floating Nature Elements */
+/* Floating Nature Elements */
 .floating-elements {
   position: fixed;
   top: 0;
@@ -90,7 +90,7 @@ body {
   100% { transform: translateY(0) rotate(360deg); }
 }
 
-/* 🎥 Full Screen Cinematic Video Background */
+/* Full Screen Cinematic Video Background */
 .video-hero {
   width: 100%;
   height: 100vh;
@@ -115,7 +115,7 @@ body {
   filter: brightness(0.8);
 }
 
-/* ✨ Hero Content Overlay */
+/* Hero Content Overlay */
 .video-content {
   position: absolute;
   top: 0;
@@ -218,7 +218,10 @@ body {
   }
 }
 
+/* Navigation Bar */
+
 /* 💎 2025 Luxury Navigation Bar */
+
 .header {
   width: 100%;
   height: 90px;
@@ -248,7 +251,7 @@ body {
   background: rgba(42, 33, 24, 0.95);
 }
 
-/* 🏷️ Logo Styles */
+/* Logo Styles */
 .logo {
   display: flex;
   align-items: center;
@@ -280,7 +283,7 @@ body {
   color: var(--text-dark);
 }
 
-/* 🧭 Navigation Links */
+/* Navigation Links */
 .navbar {
   display: flex;
   align-items: center;
@@ -339,7 +342,7 @@ body {
   color: var(--accent);
 }
 
-/* 🔑 Auth Buttons */
+/* Auth Buttons */
 .auth-buttons {
   display: flex;
   gap: 1rem;
@@ -395,7 +398,7 @@ body {
   font-size: 0.9rem;
 }
 
-/* 📅 Book Now Button */
+/* Book Now Button */
 .book-now {
   position: relative;
   padding: 0.8rem 1.8rem;
@@ -440,7 +443,7 @@ body {
   color: var(--dark);
 }
 
-/* 🌓 Theme Toggle */
+/* Theme Toggle */
 .theme-toggle {
   background: transparent;
   border: none;
@@ -465,7 +468,7 @@ body {
   transform: rotate(30deg);
 }
 
-/* 📱 Mobile Menu Toggle */
+/* Mobile Menu Toggle */
 .menu-toggle {
   display: none;
   background: transparent;
@@ -643,12 +646,25 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+
+/* Ayurveda Concept Section with white background */
+.ayurveda-concept-section {
+  width: 100%;
+  padding: 6rem 2rem;
+  background-color: white !important;
+  color: var(--dark);
+}
+
+.dark-mode .ayurveda-concept-section {
+  background-color: white !important;
+  color: var(--dark);
 /* Ayurveda Concept Section */
 .ayurveda-concept-section {
   width: 100%;
   padding: 6rem 2rem;
   background-color: var(--light);
   color: var(--text-dark);
+
 }
 
 .ayurveda-concept-container {
@@ -709,7 +725,10 @@ body {
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 2rem;
+  color: var(--dark);
+
   color: var(--text-dark);
+
   opacity: 0.9;
   font-family: 'Montserrat', sans-serif;
 }
@@ -717,7 +736,11 @@ body {
 .ayurveda-btn {
   padding: 1rem 2rem;
   background: var(--primary);
+
+  color: var(--dark);
+
   color: var(--text-dark);
+
   border: none;
   border-radius: 50px;
   font-size: 1rem;
@@ -743,9 +766,10 @@ body {
 
 .ayurveda-btn:hover .arrow-icon {
   transform: translateX(5px);
-}
+/* Footer */
 
 /* 🌿 2025 Luxury Footer */
+
 .footer {
   width: 100%;
   background: linear-gradient(135deg, var(--primary-dark), var(--secondary));
