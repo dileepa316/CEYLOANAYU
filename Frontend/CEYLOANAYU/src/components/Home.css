@@ -219,6 +219,9 @@ body {
 }
 
 /* Navigation Bar */
+
+/* 💎 2025 Luxury Navigation Bar */
+
 .header {
   width: 100%;
   height: 90px;
@@ -643,6 +646,7 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+
 /* Ayurveda Concept Section with white background */
 .ayurveda-concept-section {
   width: 100%;
@@ -654,6 +658,13 @@ body {
 .dark-mode .ayurveda-concept-section {
   background-color: white !important;
   color: var(--dark);
+/* Ayurveda Concept Section */
+.ayurveda-concept-section {
+  width: 100%;
+  padding: 6rem 2rem;
+  background-color: var(--light);
+  color: var(--text-dark);
+
 }
 
 .ayurveda-concept-container {
@@ -715,6 +726,9 @@ body {
   line-height: 1.8;
   margin-bottom: 2rem;
   color: var(--dark);
+
+  color: var(--text-dark);
+
   opacity: 0.9;
   font-family: 'Montserrat', sans-serif;
 }
@@ -722,7 +736,11 @@ body {
 .ayurveda-btn {
   padding: 1rem 2rem;
   background: var(--primary);
+
   color: var(--dark);
+
+  color: var(--text-dark);
+
   border: none;
   border-radius: 50px;
   font-size: 1rem;
@@ -748,9 +766,10 @@ body {
 
 .ayurveda-btn:hover .arrow-icon {
   transform: translateX(5px);
-}
-
 /* Footer */
+
+/* 🌿 2025 Luxury Footer */
+
 .footer {
   width: 100%;
   background: linear-gradient(135deg, var(--primary-dark), var(--secondary));

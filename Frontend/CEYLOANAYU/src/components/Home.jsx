@@ -3,6 +3,7 @@ import "./Home.css";
 import homeVideo from "../assets/Home.mp4";
 import logoImage from "../assets/navigation.jpg";
 import wellnessImage from "../assets/hm-wellness.avif";
+
 import { 
   FiMenu, 
   FiX, 
@@ -23,6 +24,9 @@ import {
   FaTripadvisor, 
   FaFacebook 
 } from "react-icons/fa";
+import { FiMenu, FiX, FiUser, FiLogIn, FiArrowRight, FiClock, FiHome, FiHeart } from "react-icons/fi";
+import { FaLeaf, FaSpa, FaMoon, FaSun, FaYoutube, FaInstagram, FaTripadvisor } from "react-icons/fa";
+
 import { useNavigate } from "react-router-dom";
 
 const CeylonAyu = () => {
@@ -221,7 +225,11 @@ const CeylonAyu = () => {
         </div>
       </section>
 
+
       {/* Footer */}
+
+      {/* 2025 Luxury Footer */}
+
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-top">
