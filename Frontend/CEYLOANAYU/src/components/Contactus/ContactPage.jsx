@@ -27,7 +27,7 @@ const ContactPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    // Add your form submission logic here (e.g. API call)
+    // Add your form submission logic here
   };
 
   return (
@@ -170,28 +170,57 @@ const ContactPage = () => {
                       value={option} 
                       checked={formData.foundUs === option} 
                       onChange={handleChange}
-                      required={option === 'Social media'} // at least one required
+                      required={option === 'Social media'}
                     /> {option}
                   </label>
                 ))}
               </div>
             </div>
 
-            <div className="form-group checkbox-group">
-              <label>
+            {/* GDPR Compliance Section */}
+            <div className="gdpr-compliance-section">
+              <h4 className="gdpr-title">GDPR COMPLIANCE *</h4>
+              <p className="gdpr-text">
+                By giving your confirmation you explicitly give consent for us to store and use this information to service your requests.
+              </p>
+              <p className="gdpr-text">
+                If you do not consent we will not store any personal information and will only send an email with the relevant details in order to service your requests.
+              </p>
+              <div className="gdpr-checkbox-container">
                 <input 
                   type="checkbox" 
+                  id="gdprConsent" 
                   name="gdprConsent" 
                   checked={formData.gdprConsent} 
                   onChange={handleChange}
                   required
+                  className="gdpr-checkbox"
                 />
-                <span>GDPR Compliance *</span>
-              </label>
-              <p className="gdpr-text">
-                By giving your confirmation you explicitly give consent for us to store and use this information to service your requests.
-                If you do not consent we will not store any personal information and will only send an email with the relevant details in order to service your requests.
-              </p>
+                <label htmlFor="gdprConsent" className="gdpr-label">
+                  I confirm I have read and given consent for the above.
+                </label>
+              </div>
+            </div>
+
+            {/* Updated reCAPTCHA Notice with Links */}
+            <div className="recaptcha-notice">
+              This site is protected by reCAPTCHA and the 
+              <a 
+                href="https://policies.google.com/privacy" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="recaptcha-link"
+              >
+                Google Privacy Policy
+              </a> and 
+              <a 
+                href="https://policies.google.com/terms" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="recaptcha-link"
+              >
+                Terms of Service
+              </a> apply.
             </div>
 
             <button type="submit" className="submit-btn">
@@ -240,7 +269,6 @@ const ContactPage = () => {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
