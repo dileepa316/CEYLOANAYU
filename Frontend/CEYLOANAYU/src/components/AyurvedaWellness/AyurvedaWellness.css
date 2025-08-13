@@ -1,0 +1,98 @@
+.ayurveda-wellness-container {
+  font-family: 'Arial', sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  color: #333;
+  line-height: 1.8;
+}
+
+.ayurveda-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #2a5a3c;
+  margin-bottom: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ayurveda-subtitle {
+  font-size: 20px;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #5a5a5a;
+  line-height: 1.4;
+}
+
+.divider-line {
+  border-top: 1px solid #d4af37;
+  margin: 30px auto;
+  width: 80%;
+}
+
+.flower-icon {
+  text-align: center;
+  font-size: 36px;
+  margin: 20px 0;
+  color: #d4af37;
+}
+
+.ayurveda-description {
+  font-size: 16px;
+  line-height: 1.8;
+  text-align: justify;
+  margin: 25px 0;
+  color: #444;
+}
+
+.contact-section {
+  margin-top: 40px;
+  padding: 25px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.contact-heading {
+  font-size: 18px;
+  color: #2a5a3c;
+  margin-bottom: 15px;
+}
+
+.contact-email {
+  font-size: 16px;
+  color: #333;
+  margin: 10px 0;
+}
+
+.contact-whatsapp {
+  font-size: 16px;
+  color: #25D366;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ayurveda-wellness-container {
+    padding: 20px 15px;
+  }
+  
+  .ayurveda-title {
+    font-size: 26px;
+  }
+  
+  .ayurveda-subtitle {
+    font-size: 18px;
+  }
+  
+  .ayurveda-description {
+    font-size: 15px;
+  }
+  
+  .contact-section {
+    padding: 20px 15px;
+  }
+}
