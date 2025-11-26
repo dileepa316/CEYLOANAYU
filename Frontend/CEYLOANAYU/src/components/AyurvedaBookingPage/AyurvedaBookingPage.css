@@ -1,0 +1,154 @@
+/* 🌿 Full-page animated herbal gradient background */
+.booking-container {
+  position: relative;        /* keep relative so content can scroll */
+  min-height: 100vh;        /* full viewport height */
+  width: 100%;              /* use 100% (not 100vw) to avoid horizontal overflow */
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 20px;
+  overflow: auto;           /* allow scrolling when content taller than viewport */
+
+  /* animated herbal gradient */
+  background: linear-gradient(135deg, #dff1dd, #b7d8b5, #e1f5d7);
+  background-size: 300% 300%;
+  animation: herbalFlow 12s ease-in-out infinite;
+
+  /* ensure gradient covers viewport when scrolling */
+  background-attachment: fixed;
+}
+
+/* 🌿 Smooth gradient animation */
+@keyframes herbalFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 🌿 glowing herbal bubbles */
+.booking-container::before,
+.booking-container::after {
+  content: "";
+  position: fixed; /* keep fixed so decorative blobs always cover viewport */
+  width: 80vw;
+  height: 80vh;
+  border-radius: 50%;
+  filter: blur(160px);
+  opacity: 0.28;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.booking-container::before {
+  background: #7fbf7a;
+  top: 20%;
+  left: 10%;
+}
+
+.booking-container::after {
+  background: #cddc39;
+  bottom: 10%;
+  right: 5%;
+}
+
+/* ensure page content sits above the background */
+.title,
+.card,
+.success-box {
+  position: relative;
+  z-index: 10;
+}
+
+/* Title */
+.title {
+  color: #2d5a27;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Card container */
+.card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  padding: 20px;
+  border-radius: 16px;
+  max-width: 900px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* Option buttons */
+.option {
+  padding: 12px;
+  background: #e4f2e8;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 14px;
+}
+
+.option:hover {
+  background: #cfe7d4;
+}
+
+.option.selected {
+  background: #8ec28b;
+  color: white;
+}
+
+/* Input */
+.input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Next button */
+.next-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background: #2d5a27;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.next-btn:hover {
+  background: #244a20;
+}
+
+/* Success Box */
+.success-box {
+  background: rgba(232, 249, 226, 0.9);
+  padding: 25px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ensure root/pages fill viewport and remove default margins */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
