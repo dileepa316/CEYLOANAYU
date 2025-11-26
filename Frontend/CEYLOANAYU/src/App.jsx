@@ -13,6 +13,8 @@ import WhaleWatching from "./components/mirissa/WhaleWatching.jsx";
 import SignupPage from "./components/Signup/SignupPage.jsx";
 import ContactPage from "./components/Contactus/ContactPage.jsx";
 import AyurvedaWellness from "./components/AyurvedaWellness/AyurvedaWellness.jsx";
+import AyurvedaBookingPage from "./components/AyurvedaBookingPage/AyurvedaBookingPage.jsx";
+import "./components/AyurvedaBookingPage/AyurvedaBookingPage.css";
 
 // CSS Imports
 import "./components/Loginpage/Login.css";
@@ -21,6 +23,7 @@ import "./components/Koggala/MangroveTour.css";
 import "./components/mirissa/WhaleWatching.css";
 import "./components/Contactus/Contact.css";
 import "./components/AyurvedaWellness/AyurvedaWellness.css";
+import "./components/AyurvedaBookingPage/AyurvedaBookingPage.css";
 import "./App.css";
 
 function App() {
@@ -37,6 +40,7 @@ function App() {
         <Route path="/whale-watching" element={<WhaleWatching />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/ayurveda-wellness" element={<AyurvedaWellness />} />
+        <Route path="/ayurveda-booking" element={<AyurvedaBookingPage />} />
       </Routes>
     </Router>
   );
