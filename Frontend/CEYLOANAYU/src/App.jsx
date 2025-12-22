@@ -1,6 +1,6 @@
 // src/App.jsx
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
 /* Page / component imports */
 import Home from "./components/Home";
@@ -13,8 +13,7 @@ import WhaleWatching from "./components/mirissa/WhaleWatching";
 import ContactPage from "./components/Contactus/ContactPage";
 import AyurvedaWellness from "./components/AyurvedaWellness/AyurvedaWellness";
 import AyurvedaBookingPage from "./components/AyurvedaBookingPage/AyurvedaBookingPage";
-
-
+import AyurvedaHero from "./components/AyurvedaHero/AyurvedaHero";
 
 /* Global CSS */
 import "./index.css";
@@ -35,9 +34,9 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/ayurveda-wellness" element={<AyurvedaWellness />} />
         <Route path="/ayurveda-booking" element={<AyurvedaBookingPage />} />
+        <Route path="/ayurveda" element={<AyurvedaHero />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-
-     
     </Router>
   );
 }

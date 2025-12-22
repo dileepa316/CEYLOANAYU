@@ -1,73 +1,26 @@
 import React, { useState } from "react";
 import "./Home.css";
+import logo from "../assets/image1.jpg";
+import { Link } from "react-router-dom";
+
+// changed code: real icons
+import { FaFacebookF, FaInstagram, FaYoutube, FaTwitter, FaUserMd, FaLeaf, FaHospital, FaBullseye, FaSpa, FaAppleAlt } from "react-icons/fa";
 
 const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [bookingForm, setBookingForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    date: "",
-    message: "",
-  });
-
-  const handleBookingChange = (e) => {
-    setBookingForm({
-      ...bookingForm,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleBookingSubmit = (e) => {
-    e.preventDefault();
-    alert("Booking submitted successfully! We will contact you soon.");
-    setBookingForm({
-      name: "",
-      email: "",
-      phone: "",
-      service: "",
-      date: "",
-      message: "",
-    });
-  };
 
   const handleConsultationClick = () => {
-    const el = document.getElementById("booking");
+    const el = document.getElementById("services");
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
   const services = [
-    {
-      title: "OPD Services",
-      description: "Outpatient Department services with experienced Ayurveda physicians",
-      icon: "🏥",
-    },
-    {
-      title: "Special Clinics",
-      description: "Specialized treatment clinics for various health conditions",
-      icon: "🎯",
-    },
-    {
-      title: "Panchakarma Therapy",
-      description: "Complete detoxification and rejuvenation treatments",
-      icon: "🛁",
-    },
-    {
-      title: "Herbal Pharmacy",
-      description: "100% natural herbal medicines and preparations",
-      icon: "🌿",
-    },
-    {
-      title: "Yoga & Meditation",
-      description: "Therapeutic yoga sessions and meditation classes",
-      icon: "🧘",
-    },
-    {
-      title: "Diet & Nutrition",
-      description: "Personalized Ayurvedic diet plans and counseling",
-      icon: "🥗",
-    },
+    { title: "OPD Services", description: "Outpatient Department services with experienced Ayurveda physicians", icon: <FaUserMd className="icon-real" /> },
+    { title: "Special Clinics", description: "Specialized treatment clinics for various health conditions", icon: <FaBullseye className="icon-real" /> },
+    { title: "Panchakarma Therapy", description: "Complete detoxification and rejuvenation treatments", icon: <FaSpa className="icon-real" /> },
+    { title: "Herbal Pharmacy", description: "100% natural herbal medicines and preparations", icon: <FaLeaf className="icon-real" /> },
+    { title: "Yoga & Meditation", description: "Therapeutic yoga sessions and meditation classes", icon: <FaHospital className="icon-real" /> },
+    { title: "Diet & Nutrition", description: "Personalized Ayurvedic diet plans and counseling", icon: <FaAppleAlt className="icon-real" /> },
   ];
 
   const facilities = [
@@ -108,56 +61,104 @@ const Home = () => {
     "Swedana",
   ];
 
-  // Footer Component - Integrated directly
+  // Updated 2026 Footer Component
   const Footer = () => (
     <footer className="footer">
       <div className="container">
         <div className="footer-content">
-          <div className="footer-section">
-            <h3>Ceylon Ayu Medical</h3>
-            <p>Traditional Ayurveda healing with modern medical care.</p>
+          <div className="footer-brand">
+            <div className="footer-logo">
+              <div className="logo-icon">
+                <img 
+                  src={logo} 
+                  alt="Ceylon Ayu Medical Logo" 
+                  style={{ 
+                    width: '100%', 
+                    height: '100%', 
+                    objectFit: 'contain',
+                    borderRadius: '50%'
+                  }}
+                />
+              </div>
+              <div className="footer-logo-text">
+                <h3>Ceylon Ayu Medical</h3>
+                <p className="tagline">Traditional Ayurveda healing with modern medical care.</p>
+              </div>
+            </div>
             <div className="footer-contact">
-              <p>📍 Ceylon Ayu Medical, Hikkaduwa, Thiranagama, Sri Lanka</p>
-              <p>📞 0771822396</p>
-              <p>📧 info@ceylonayumedical.com</p>
+              <div className="contact-item">
+                <i className="fas fa-map-marker-alt"></i>
+                <p>Ceylon Ayu Medical, Hikkaduwa, Thiranagama, Sri Lanka</p>
+              </div>
+              <div className="contact-item">
+                <i className="fas fa-phone"></i>
+                <p>+94 77 182 2396</p>
+              </div>
+              <div className="contact-item">
+                <i className="fas fa-envelope"></i>
+                <p>info@ceylonayumedical.com</p>
+              </div>
             </div>
           </div>
           
           <div className="footer-section">
             <h4>Quick Links</h4>
-            <ul>
+            <ul className="footer-links">
               <li><a href="#home">Home</a></li>
               <li><a href="#services">Services</a></li>
               <li><a href="#treatments">Treatments</a></li>
-              <li><a href="#booking">Book Appointment</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
           
           <div className="footer-section">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="#">OPD Services</a></li>
-              <li><a href="#">Panchakarma</a></li>
-              <li><a href="#">Yoga Therapy</a></li>
-              <li><a href="#">Herbal Pharmacy</a></li>
+            <h4>Our Services</h4>
+            <ul className="footer-links">
+              <li><a href="#services">OPD Services</a></li>
+              <li><a href="#services">Panchakarma</a></li>
+              <li><a href="#services">Yoga Therapy</a></li>
+              <li><a href="#services">Herbal Pharmacy</a></li>
+              <li><a href="#services">Special Clinics</a></li>
+              <li><a href="#services">Diet & Nutrition</a></li>
             </ul>
           </div>
           
           <div className="footer-section">
             <h4>Opening Hours</h4>
-            <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-            <p>Saturday: 8:00 AM - 1:00 PM</p>
-            <p>Sunday: Emergency Only</p>
+            <div className="opening-hours">
+              <div className="hours-item">
+                <span className="days">Monday - Friday</span>
+                <span className="time">8:00 AM - 6:00 PM</span>
+              </div>
+              <div className="hours-item">
+                <span className="days">Saturday</span>
+                <span className="time">8:00 AM - 1:00 PM</span>
+              </div>
+              <div className="hours-item emergency">
+                <span className="days">Sunday</span>
+                <span className="time">Emergency Only</span>
+              </div>
+            </div>
+            <div className="footer-newsletter">
+              <p>Subscribe to our newsletter</p>
+              <div className="newsletter-form">
+                <input type="email" placeholder="Your email address" />
+                <button type="submit">Subscribe</button>
+              </div>
+            </div>
           </div>
         </div>
         
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} Ceylon Ayu Medical. All rights reserved.</p>
           <div className="footer-social">
-            <a href="#" aria-label="Facebook">📘</a>
-            <a href="#" aria-label="Instagram">📷</a>
-            <a href="#" aria-label="YouTube">▶️</a>
-            <a href="#" aria-label="Twitter">🐦</a>
+            <span className="follow-label">Follow us:</span>
+            <a className="social-link" href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+            <a className="social-link" href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+            <a className="social-link" href="https://youtube.com" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
+            <a className="social-link" href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
+           
           </div>
         </div>
       </div>
@@ -195,7 +196,19 @@ const Home = () => {
       <header className="main-header">
         <div className="container nav-container">
           <a href="/" className="logo">
-            <div className="logo-icon">CAM</div>
+            {/* Updated logo section with PNG image */}
+            <div className="logo-icon">
+              <img 
+                src={logo} 
+                alt="Ceylon Ayu Medical Logo" 
+                style={{ 
+                  width: '100%', 
+                  height: '100%', 
+                  objectFit: 'contain',
+                  borderRadius: '50%'
+                }}
+              />
+            </div>
             <div className="logo-text">
               <h1>Ceylon Ayu Medical</h1>
               <span>Traditional Healing, Modern Care</span>
@@ -236,17 +249,12 @@ const Home = () => {
                   Treatments
                 </a>
               </li>
-              <li>
-                <a href="#contact" onClick={() => setIsMenuOpen(false)}>
-                  Contact Us
-                </a>
-              </li>
             </ul>
           </nav>
 
           <div className="cta-buttons">
             <button className="btn btn-primary" onClick={handleConsultationClick}>
-              Online Consultation
+              Our Services
             </button>
           </div>
         </div>
@@ -268,11 +276,11 @@ const Home = () => {
             soul.
           </p>
           <div className="hero-buttons">
-            <a href="#booking" className="btn btn-primary">
-              Book Appointment
-            </a>
-            <a href="#services" className="btn btn-outline">
+            <a href="#services" className="btn btn-primary">
               Our Services
+            </a>
+            <a href="#treatments" className="btn btn-outline">
+              View Treatments
             </a>
           </div>
         </div>
@@ -409,110 +417,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Online Booking Section */}
-      <section id="booking" className="booking">
-        <div className="container">
-          <div className="section-title">
-            <h2 style={{ color: "var(--white)" }}>Online Consultation & Booking</h2>
-            <p style={{ color: "rgba(255,255,255,0.9)" }}>
-              Book your appointment or online consultation with our experts
-            </p>
-          </div>
-
-          <form className="booking-form" onSubmit={handleBookingSubmit}>
-            <div className="form-group">
-              <label htmlFor="name">Full Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={bookingForm.name}
-                onChange={handleBookingChange}
-                required
-                placeholder="Enter your full name"
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="email">Email Address</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={bookingForm.email}
-                onChange={handleBookingChange}
-                required
-                placeholder="Enter your email"
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="phone">Phone Number</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                value={bookingForm.phone}
-                onChange={handleBookingChange}
-                required
-                placeholder="Enter your phone number"
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="service">Select Service</label>
-              <select
-                id="service"
-                name="service"
-                value={bookingForm.service}
-                onChange={handleBookingChange}
-                required
-              >
-                <option value="">Choose a service</option>
-                <option value="consultation">Online Consultation</option>
-                <option value="opd">OPD Visit</option>
-                <option value="panchakarma">Panchakarma Therapy</option>
-                <option value="yoga">Yoga Therapy</option>
-                <option value="other">Other Treatment</option>
-              </select>
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="date">Preferred Date</label>
-              <input
-                type="date"
-                id="date"
-                name="date"
-                value={bookingForm.date}
-                onChange={handleBookingChange}
-                required
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="message">Additional Information</label>
-              <textarea
-                id="message"
-                name="message"
-                value={bookingForm.message}
-                onChange={handleBookingChange}
-                rows="4"
-                placeholder="Describe your health condition or any special requirements"
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              className="btn btn-primary"
-              style={{ width: "100%" }}
-            >
-              Book Appointment Now
-            </button>
-          </form>
-        </div>
-      </section>
-
-      {/* Footer - Now using the integrated Footer component */}
+      {/* Footer - Updated 2026 Version */}
       <Footer />
     </div>
   );
