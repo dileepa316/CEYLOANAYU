@@ -3,6 +3,12 @@ import "./Home.css";
 import logo from "../assets/image1.jpg";
 import { Link } from "react-router-dom";
 
+// Import the AyurvedaHero component
+import AyurvedaHero from "./AyurvedaHero/AyurvedaHero";
+// Import the Panchakarma component
+import Panchakarma from "./Panchakarma/Panchakarma";
+
+
 // changed code: real icons
 import { FaFacebookF, FaInstagram, FaYoutube, FaTwitter, FaUserMd, FaLeaf, FaHospital, FaBullseye, FaSpa, FaAppleAlt } from "react-icons/fa";
 
@@ -13,15 +19,6 @@ const Home = () => {
     const el = document.getElementById("services");
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
-
-  const services = [
-    { title: "OPD Services", description: "Outpatient Department services with experienced Ayurveda physicians", icon: <FaUserMd className="icon-real" /> },
-    { title: "Special Clinics", description: "Specialized treatment clinics for various health conditions", icon: <FaBullseye className="icon-real" /> },
-    { title: "Panchakarma Therapy", description: "Complete detoxification and rejuvenation treatments", icon: <FaSpa className="icon-real" /> },
-    { title: "Herbal Pharmacy", description: "100% natural herbal medicines and preparations", icon: <FaLeaf className="icon-real" /> },
-    { title: "Yoga & Meditation", description: "Therapeutic yoga sessions and meditation classes", icon: <FaHospital className="icon-real" /> },
-    { title: "Diet & Nutrition", description: "Personalized Ayurvedic diet plans and counseling", icon: <FaAppleAlt className="icon-real" /> },
-  ];
 
   const facilities = [
     {
@@ -158,7 +155,6 @@ const Home = () => {
             <a className="social-link" href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
             <a className="social-link" href="https://youtube.com" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
             <a className="social-link" href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
-           
           </div>
         </div>
       </div>
@@ -196,7 +192,6 @@ const Home = () => {
       <header className="main-header">
         <div className="container nav-container">
           <a href="/" className="logo">
-            {/* Updated logo section with PNG image */}
             <div className="logo-icon">
               <img 
                 src={logo} 
@@ -286,66 +281,11 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="features">
-        <div className="container">
-          <div className="section-title">
-            <h2>Why Choose Ceylon Ayu Medical?</h2>
-            <p>
-              Experience the perfect blend of traditional Ayurveda and modern
-              healthcare facilities
-            </p>
-          </div>
-          <div className="features-grid">
-            <div className="feature-card">
-              <div className="feature-icon">👨‍⚕️</div>
-              <h3>Expert Physicians</h3>
-              <p>Qualified Ayurveda doctors with decades of experience</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">🌿</div>
-              <h3>100% Natural</h3>
-              <p>Pure herbal medicines from our own garden</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">🏥</div>
-              <h3>Modern Facilities</h3>
-              <p>State-of-the-art treatment facilities</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">🎯</div>
-              <h3>Personalized Care</h3>
-              <p>Customized treatment plans for each individual</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* REPLACED: Why Choose Ceylon Ayu Medical? with AyurvedaHero */}
+      <AyurvedaHero />
 
-      {/* Services Section */}
-      <section id="services" className="services">
-        <div className="container">
-          <div className="section-title">
-            <h2>Our Services & Facilities</h2>
-            <p>Comprehensive Ayurvedic healthcare services for complete wellness</p>
-          </div>
-          <div className="services-grid">
-            {services.map((service, index) => (
-              <div key={index} className="service-card">
-                <div className="service-image">
-                  <span>{service.icon}</span>
-                </div>
-                <div className="service-content">
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
-                  <a href="#" className="btn btn-outline">
-                    Learn More
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* REPLACED: Our Services & Facilities with Panchakarma */}
+      <Panchakarma />
 
       {/* Facilities Section */}
       <section id="facilities" className="features">
@@ -365,7 +305,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Treatments Section */}
+      {/* Treatments Section - FIXED VERSION */}
       <section id="treatments" className="services">
         <div className="container">
           <div className="section-title">
@@ -373,41 +313,11 @@ const Home = () => {
             <p>Traditional Ayurvedic therapies for various health conditions</p>
           </div>
           <div className="treatments-list">
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-                gap: "1rem",
-                marginTop: "2rem",
-              }}
-            >
+            <div className="treatments-grid">
               {treatments.map((treatment, index) => (
-                <div
-                  key={index}
-                  style={{
-                    backgroundColor: "var(--white)",
-                    padding: "1rem",
-                    borderRadius: "4px",
-                    boxShadow: "var(--shadow-sm)",
-                    borderLeft: "4px solid var(--primary-green)",
-                  }}
-                >
-                  <h4
-                    style={{
-                      color: "var(--primary-dark)",
-                      marginBottom: "0.5rem",
-                    }}
-                  >
-                    {treatment}
-                  </h4>
-                  <a
-                    href="#"
-                    style={{
-                      color: "var(--primary-green)",
-                      textDecoration: "none",
-                      fontSize: "0.9rem",
-                    }}
-                  >
+                <div key={index} className="treatment-card">
+                  <h4>{treatment}</h4>
+                  <a href="#" className="treatment-link">
                     Learn More →
                   </a>
                 </div>

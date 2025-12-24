@@ -14,6 +14,8 @@ import ContactPage from "./components/Contactus/ContactPage";
 import AyurvedaWellness from "./components/AyurvedaWellness/AyurvedaWellness";
 import AyurvedaBookingPage from "./components/AyurvedaBookingPage/AyurvedaBookingPage";
 import AyurvedaHero from "./components/AyurvedaHero/AyurvedaHero";
+import Panchakarma from "./components/Panchakarma/Panchakarma";
+import SpecialTreatments from "./components/SpecialTreatments/SpecialTreatments";
 
 /* Global CSS */
 import "./index.css";
@@ -35,6 +37,8 @@ function App() {
         <Route path="/ayurveda-wellness" element={<AyurvedaWellness />} />
         <Route path="/ayurveda-booking" element={<AyurvedaBookingPage />} />
         <Route path="/ayurveda" element={<AyurvedaHero />} />
+        <Route path="/panchakarma" element={<Panchakarma />} />
+        <Route path="/special-treatments" element={<SpecialTreatments />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
