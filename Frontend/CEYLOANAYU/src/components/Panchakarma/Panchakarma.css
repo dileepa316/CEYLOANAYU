@@ -1,0 +1,172 @@
+/* ===== Section background ===== */
+.pancha-section {
+  padding: 80px 6%;
+  background:
+    radial-gradient(rgba(120, 90, 60, 0.05) 1px, transparent 1px),
+    #f6f3ee;
+  background-size: 120px 120px;
+}
+
+/* ===== Grid ===== */
+.pancha-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+/* ===== Card ===== */
+.pancha-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+/* ===== Image ===== */
+.pancha-card img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.pancha-card:hover img {
+  transform: scale(1.08);
+}
+
+/* ===== Title ON Image ===== */
+.pancha-title-on-image {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  z-index: 2;
+  padding: 0 12px;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.55);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.pancha-title-text {
+  line-height: 1.3;
+}
+
+/* ===== ORNAMENT (LINES + MANDALA) ===== */
+.ayu-divider-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.ayu-line {
+  width: 36px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* Mandala Image */
+.ayu-mandala img {
+  width: 18px;
+  height: 18px;
+  opacity: 0.85;
+  animation: rotateMandala 18s linear infinite;
+}
+
+@keyframes rotateMandala {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ===== Hover Overlay ===== */
+.pancha-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(92, 67, 46, 0.88);
+  color: #fff;
+  padding: 36px 28px;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 3;
+}
+
+.pancha-card:hover .pancha-overlay {
+  opacity: 1;
+}
+
+/* ===== Subtitle ===== */
+.pancha-sub {
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  text-align: center;
+  opacity: 0.9;
+}
+
+/* ===== Overlay Title ===== */
+.pancha-overlay h3 {
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+/* ===== Divider (flower + hyphens) ===== */
+.pancha-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px 0 18px;
+  gap: 6px;
+}
+
+.divider-hyphen {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Small flower */
+.pancha-flower {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.85;
+  background:
+    radial-gradient(circle at center, #d9c7a3 34%, transparent 35%),
+    conic-gradient(from 0deg, #d9c7a3 0deg 14deg, transparent 14deg 28deg);
+}
+
+/* ===== Description ===== */
+.pancha-overlay p {
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+/* ===== Button ===== */
+.pancha-overlay button {
+  align-self: center;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 9px 24px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pancha-overlay button:hover {
+  background: #fff;
+  color: #5c432e;
+}
