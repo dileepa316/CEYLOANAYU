@@ -37,6 +37,22 @@ const treatments = [
 export default function Panchakarma() {
   return (
     <section className="pancha-section">
+      {/* ADDED HEADING SECTION */}
+      <div className="pancha-heading">
+        <h1 className="pancha-main-title">Treatments</h1>
+        <p className="pancha-subtitle">
+          Discover our specialized Ayurvedic treatments for holistic healing and wellness
+        </p>
+        
+        <div className="pancha-title-divider">
+          <span className="pancha-divider-line"></span>
+          <span className="pancha-mandala">
+            <img src={mandala} alt="Mandala Ornament" />
+          </span>
+          <span className="pancha-divider-line"></span>
+        </div>
+      </div>
+
       <div className="pancha-grid">
         {treatments.map((item, index) => (
           <div className="pancha-card" key={index}>
