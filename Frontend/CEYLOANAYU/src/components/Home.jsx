@@ -3,14 +3,13 @@ import "./Home.css";
 import logo from "../assets/image1.jpg";
 import { Link } from "react-router-dom";
 
-// Import the AyurvedaHero component
+// Import components
 import AyurvedaHero from "./AyurvedaHero/AyurvedaHero";
-// Import the Panchakarma component
 import Panchakarma from "./Panchakarma/Panchakarma";
+import SpecialTreatments from "./SpecialTreatments/SpecialTreatments";
 
-
-// changed code: real icons
-import { FaFacebookF, FaInstagram, FaYoutube, FaTwitter, FaUserMd, FaLeaf, FaHospital, FaBullseye, FaSpa, FaAppleAlt } from "react-icons/fa";
+// Icons
+import { FaFacebookF, FaInstagram, FaYoutube, FaTwitter } from "react-icons/fa";
 
 const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,33 +18,6 @@ const Home = () => {
     const el = document.getElementById("services");
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
-
-  const facilities = [
-    {
-      title: "Modern Treatment Rooms",
-      description: "Equipped with traditional and modern amenities",
-    },
-    {
-      title: "Herbal Garden",
-      description: "Our own medicinal plant garden",
-    },
-    {
-      title: "Accommodation",
-      description: "Comfortable stay facilities for patients",
-    },
-    {
-      title: "Laboratory",
-      description: "Modern diagnostic facilities",
-    },
-    {
-      title: "Pharmacy",
-      description: "In-house Ayurvedic pharmacy",
-    },
-    {
-      title: "Consultation Rooms",
-      description: "Private consultation spaces",
-    },
-  ];
 
   const treatments = [
     "Abhyangam (Oil Massage)",
@@ -172,18 +144,10 @@ const Home = () => {
             <span>📧 info@ceylonayumedical.com</span>
           </div>
           <div className="social-icons">
-            <a href="#" title="Facebook">
-              📘
-            </a>
-            <a href="#" title="Instagram">
-              📷
-            </a>
-            <a href="#" title="YouTube">
-              ▶️
-            </a>
-            <a href="#" title="Twitter">
-              🐦
-            </a>
+            <a href="#" title="Facebook">📘</a>
+            <a href="#" title="Instagram">📷</a>
+            <a href="#" title="YouTube">▶️</a>
+            <a href="#" title="Twitter">🐦</a>
           </div>
         </div>
       </div>
@@ -193,16 +157,8 @@ const Home = () => {
         <div className="container nav-container">
           <a href="/" className="logo">
             <div className="logo-icon">
-              <img 
-                src={logo} 
-                alt="Ceylon Ayu Medical Logo" 
-                style={{ 
-                  width: '100%', 
-                  height: '100%', 
-                  objectFit: 'contain',
-                  borderRadius: '50%'
-                }}
-              />
+              <img src={logo} alt="Ceylon Ayu Medical Logo" 
+                style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '50%' }} />
             </div>
             <div className="logo-text">
               <h1>Ceylon Ayu Medical</h1>
@@ -210,40 +166,17 @@ const Home = () => {
             </div>
           </a>
 
-          <button
-            className="mobile-menu-btn"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
+          <button className="mobile-menu-btn" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? "✕" : "☰"}
           </button>
 
           <nav className={`main-nav ${isMenuOpen ? "active" : ""}`}>
             <ul>
-              <li>
-                <a href="#home" onClick={() => setIsMenuOpen(false)}>
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#about" onClick={() => setIsMenuOpen(false)}>
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#services" onClick={() => setIsMenuOpen(false)}>
-                  Services & Facilities
-                </a>
-              </li>
-              <li>
-                <a href="#opd" onClick={() => setIsMenuOpen(false)}>
-                  OPD
-                </a>
-              </li>
-              <li>
-                <a href="#treatments" onClick={() => setIsMenuOpen(false)}>
-                  Treatments
-                </a>
-              </li>
+              <li><a href="#home" onClick={() => setIsMenuOpen(false)}>Home</a></li>
+              <li><a href="#about" onClick={() => setIsMenuOpen(false)}>About Us</a></li>
+              <li><a href="#services" onClick={() => setIsMenuOpen(false)}>Services & Facilities</a></li>
+              <li><a href="#opd" onClick={() => setIsMenuOpen(false)}>OPD</a></li>
+              <li><a href="#treatments" onClick={() => setIsMenuOpen(false)}>Treatments</a></li>
             </ul>
           </nav>
 
@@ -256,78 +189,30 @@ const Home = () => {
       </header>
 
       {/* Overlay for mobile menu */}
-      <div
-        className={`overlay ${isMenuOpen ? "active" : ""}`}
-        onClick={() => setIsMenuOpen(false)}
-      ></div>
+      <div className={`overlay ${isMenuOpen ? "active" : ""}`} onClick={() => setIsMenuOpen(false)}></div>
 
-      {/* Hero Section */}
+      {/* Hero Section - REMOVED ALL BUTTONS */}
       <section id="home" className="hero">
         <div className="hero-content">
           <h1>Experience Authentic Ayurveda Healing</h1>
           <p>
             At Ceylon Ayu Medical, we blend ancient Ayurvedic wisdom with modern
-            healthcare practices to provide holistic healing for mind, body, and
-            soul.
+            healthcare practices to provide holistic healing for mind, body, and soul.
           </p>
-          <div className="hero-buttons">
-            <a href="#services" className="btn btn-primary">
-              Our Services
-            </a>
-            <a href="#treatments" className="btn btn-outline">
-              View Treatments
-            </a>
-          </div>
+          {/* Hero buttons section removed completely */}
         </div>
       </section>
 
-      {/* REPLACED: Why Choose Ceylon Ayu Medical? with AyurvedaHero */}
+      {/* AyurvedaHero Component */}
       <AyurvedaHero />
 
-      {/* REPLACED: Our Services & Facilities with Panchakarma */}
+      {/* Panchakarma Component */}
       <Panchakarma />
 
-      {/* Facilities Section */}
-      <section id="facilities" className="features">
-        <div className="container">
-          <div className="section-title">
-            <h2>Our Facilities</h2>
-            <p>Modern amenities for traditional healing</p>
-          </div>
-          <div className="features-grid">
-            {facilities.map((facility, index) => (
-              <div key={index} className="feature-card">
-                <h3>{facility.title}</h3>
-                <p>{facility.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* SpecialTreatments Component */}
+      <SpecialTreatments />
 
-      {/* Treatments Section - FIXED VERSION */}
-      <section id="treatments" className="services">
-        <div className="container">
-          <div className="section-title">
-            <h2>Specialized Treatments</h2>
-            <p>Traditional Ayurvedic therapies for various health conditions</p>
-          </div>
-          <div className="treatments-list">
-            <div className="treatments-grid">
-              {treatments.map((treatment, index) => (
-                <div key={index} className="treatment-card">
-                  <h4>{treatment}</h4>
-                  <a href="#" className="treatment-link">
-                    Learn More →
-                  </a>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer - Updated 2026 Version */}
+      {/* Footer */}
       <Footer />
     </div>
   );

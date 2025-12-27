@@ -11,7 +11,7 @@ const AyurvedaHero = () => {
         {/* LEFT CONTENT */}
         <div className="ayu-left">
           <span className="ayu-subtitle">
-            SIDDHALEPA AYURVEDA HOSPITAL
+         CEYLON AYU MEDICAL
           </span>
 
           <h1 className="ayu-title">

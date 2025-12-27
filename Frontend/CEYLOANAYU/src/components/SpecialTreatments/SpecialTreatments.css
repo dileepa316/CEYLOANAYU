@@ -1,15 +1,20 @@
-/* SpecialTreatments.css - Working Version */
+/* =========================================
+   SpecialTreatments.css
+   ONLY background color updated
+   Design remains unchanged
+========================================= */
 
-/* ===== PAGE BACKGROUND ===== */
+/* ===== PAGE BACKGROUND (MATCH AyurvedaHero) ===== */
 .st-page {
-  background: linear-gradient(135deg, #fdfcf8 0%, #f1ede5 100%);
+  background-color: #fff8eb; /* SAME as AyurvedaHero */
   padding: 40px 5%;
   font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
   color: #33332d;
   min-height: 100vh;
+  box-sizing: border-box;
 }
 
-/* HERO */
+/* ===== HERO ===== */
 .st-hero {
   text-align: center;
   margin-bottom: 60px;
@@ -37,7 +42,7 @@
   line-height: 1.6;
 }
 
-/* HERO ORNAMENT */
+/* ===== HERO ORNAMENT ===== */
 .st-hero-divider {
   display: flex;
   align-items: center;
@@ -168,7 +173,7 @@
   color: #6b6757;
 }
 
-/* SECTION TITLES */
+/* ===== SECTION TITLES ===== */
 .st-section-title {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 28px;
@@ -179,7 +184,7 @@
   position: relative;
 }
 
-/* CTA BUTTON */
+/* ===== CTA BUTTON ===== */
 .st-cta {
   text-align: center;
   margin-top: 50px;
@@ -203,20 +208,20 @@
   box-shadow: 0 10px 25px rgba(42, 92, 61, 0.2);
 }
 
-/* Responsive */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .st-hero-title {
     font-size: 32px;
   }
-  
+
   .st-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .st-circle-grid {
     gap: 40px;
   }
-  
+
   .st-circle-card {
     width: 100%;
     max-width: 200px;
