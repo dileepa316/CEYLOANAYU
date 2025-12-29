@@ -10,12 +10,13 @@ import Experience from "./components/Experience/Experience";
 import GalleFort from "./components/Galle/GalleFort";
 import MangroveTour from "./components/Koggala/MangroveTour";
 import WhaleWatching from "./components/mirissa/WhaleWatching";
-import ContactPage from "./components/Contactus/ContactPage";
+import ContactPage from "./components/Contactus/Contact"; // changed code
 import AyurvedaWellness from "./components/AyurvedaWellness/AyurvedaWellness";
 import AyurvedaBookingPage from "./components/AyurvedaBookingPage/AyurvedaBookingPage";
 import AyurvedaHero from "./components/AyurvedaHero/AyurvedaHero";
 import Panchakarma from "./components/Panchakarma/Panchakarma";
 import SpecialTreatments from "./components/SpecialTreatments/SpecialTreatments";
+import AboutUs from "./components/AboutUs/AboutUs"; // added import
 
 /* Global CSS */
 import "./index.css";
@@ -33,12 +34,13 @@ function App() {
         <Route path="/galle-fort" element={<GalleFort />} />
         <Route path="/mangrove-tour" element={<MangroveTour />} />
         <Route path="/whale-watching" element={<WhaleWatching />} />
-        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/contact" element={<ContactPage />} /> {/* changed code */}
         <Route path="/ayurveda-wellness" element={<AyurvedaWellness />} />
         <Route path="/ayurveda-booking" element={<AyurvedaBookingPage />} />
         <Route path="/ayurveda" element={<AyurvedaHero />} />
         <Route path="/panchakarma" element={<Panchakarma />} />
         <Route path="/special-treatments" element={<SpecialTreatments />} />
+        <Route path="/about" element={<AboutUs />} /> {/* added route */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
