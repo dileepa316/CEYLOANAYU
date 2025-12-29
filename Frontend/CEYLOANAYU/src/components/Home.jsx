@@ -77,7 +77,7 @@ const Home = () => {
               <li><a href="#services">Services</a></li>
               <li><a href="#treatments">Treatments</a></li>
               <li><a href="#about">About Us</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
           
@@ -135,22 +135,7 @@ const Home = () => {
 
   return (
     <div className="home-root">
-      {/* Header Top */}
-      <div className="header-top">
-        <div className="container">
-          <div className="contact-info">
-            <span>📍 Ceylon Ayu Medical, Hikkaduwa, Thiranagama, Sri Lanka</span>
-            <span>📞 0771822396</span>
-            <span>📧 info@ceylonayumedical.com</span>
-          </div>
-          <div className="social-icons">
-            <a href="#" title="Facebook">📘</a>
-            <a href="#" title="Instagram">📷</a>
-            <a href="#" title="YouTube">▶️</a>
-            <a href="#" title="Twitter">🐦</a>
-          </div>
-        </div>
-      </div>
+      {/* Header Top removed as requested */}
 
       {/* Main Header */}
       <header className="main-header">
@@ -177,6 +162,7 @@ const Home = () => {
               <li><a href="#services" onClick={() => setIsMenuOpen(false)}>Services & Facilities</a></li>
               <li><a href="#opd" onClick={() => setIsMenuOpen(false)}>OPD</a></li>
               <li><a href="#treatments" onClick={() => setIsMenuOpen(false)}>Treatments</a></li>
+              <li><Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact Us</Link></li>
             </ul>
           </nav>
 
