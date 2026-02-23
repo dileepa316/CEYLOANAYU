@@ -73,11 +73,11 @@ const Home = () => {
           <div className="footer-section">
             <h4>Quick Links</h4>
             <ul className="footer-links">
-              <li><a href="#home">Home</a></li>
+              <li><Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
               <li><a href="#services">Services</a></li>
               <li><a href="#treatments">Treatments</a></li>
-              <li><a href="#about">About Us</a></li>
-              <li><Link to="/contact">Contact</Link></li>
+              <li><Link to="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link></li>
+              <li><Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
             </ul>
           </div>
           
@@ -135,12 +135,10 @@ const Home = () => {
 
   return (
     <div className="home-root">
-      {/* Header Top removed as requested */}
-
       {/* Main Header */}
       <header className="main-header">
         <div className="container nav-container">
-          <a href="/" className="logo">
+          <Link to="/" className="logo">
             <div className="logo-icon">
               <img src={logo} alt="Ceylon Ayu Medical Logo" 
                 style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '50%' }} />
@@ -149,7 +147,7 @@ const Home = () => {
               <h1>Ceylon Ayu Medical</h1>
               <span>Traditional Healing, Modern Care</span>
             </div>
-          </a>
+          </Link>
 
           <button className="mobile-menu-btn" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? "✕" : "☰"}
@@ -157,8 +155,8 @@ const Home = () => {
 
           <nav className={`main-nav ${isMenuOpen ? "active" : ""}`}>
             <ul>
-              <li><a href="#home" onClick={() => setIsMenuOpen(false)}>Home</a></li>
-              <li><a href="#about" onClick={() => setIsMenuOpen(false)}>About Us</a></li>
+              <li><Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
+              <li><Link to="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link></li>
               <li><a href="#services" onClick={() => setIsMenuOpen(false)}>Services & Facilities</a></li>
               <li><a href="#opd" onClick={() => setIsMenuOpen(false)}>OPD</a></li>
               <li><a href="#treatments" onClick={() => setIsMenuOpen(false)}>Treatments</a></li>

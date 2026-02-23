@@ -1,105 +1,64 @@
 /* ===============================
-   About Us Page Styles
+   About Us Page with Clean Design
 ================================ */
 .about-us-container {
   max-width: 1000px;
-  margin: 60px auto;
-  padding: 0 30px;
+  margin: 0 auto; /* Changed from 80px auto */
+  padding: 80px 30px; /* Added padding top/bottom here */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff8eb; /* Added background color */
+  min-height: calc(100vh - 160px); /* Ensure background covers full height */
+  box-sizing: border-box;
 }
 
-.about-header {
+/* Main title styling */
+.about-title {
   text-align: center;
-  margin-bottom: 50px;
-  position: relative;
-}
-
-.about-header h1 {
   color: #2d5c3e;
-  font-size: 42px;
+  font-size: 46px;
   font-weight: 700;
-  margin-bottom: 15px;
-  position: relative;
-  display: inline-block;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
 }
 
-.about-header h1::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 3px;
-  background: linear-gradient(90deg, #d4af37, #ffd700, #d4af37);
+/* About Us heading styling - NO LINE BELOW */
+.about-heading {
+  color: #2d5c3e;
+  font-size: 34px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  text-align: center;
 }
 
-.about-header p {
-  color: #666;
-  font-size: 18px;
-  max-width: 700px;
-  margin: 20px auto 0;
-  line-height: 1.6;
-}
-
-/* ===============================
-   MANDALA DIVIDER
-================================ */
-.st-hero-divider {
+/* Flower container - positioned after About Us heading */
+.flower-container {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 12px;
-  margin: 18px auto;
+  align-items: center;
+  margin: 30px 0 50px 0;
+  height: 70px;
 }
 
-.st-line {
-  width: 36px;
-  height: 1px;
-  background: rgba(92, 67, 46, 0.6);
+.flower-icon {
+  width: 45px;
+  height: 45px;
+  animation: rotateFlower 20s linear infinite;
 }
 
-.st-mandala img {
-  width: 20px;
-  height: 20px;
-  opacity: 0.85;
-  animation: rotateMandala 18s linear infinite;
+.flower-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-@keyframes rotateMandala {
+@keyframes rotateFlower {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
-/* ===============================
-   Main Content
-================================ */
+/* Content Paragraphs */
 .about-content {
-  background: #ffffff;
-  padding: 50px;
-  border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-  border-left: 5px solid #d4af37;
-  position: relative;
-}
-
-.about-content h2 {
-  color: #2d5c3e;
-  font-size: 32px;
-  font-weight: 600;
-  margin-bottom: 30px;
-  position: relative;
-  padding-bottom: 15px;
-}
-
-.about-content h2::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 60px;
-  height: 2px;
-  background: #d4af37;
+  margin-top: 20px;
 }
 
 .about-content p {
@@ -108,18 +67,41 @@
   line-height: 1.8;
   margin-bottom: 25px;
   text-align: justify;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Decorative Elements */
-.about-content::before {
-  content: '🌿';
+/* Decorative elements for flower - LINES MUCH CLOSER */
+.flower-decoration {
+  position: relative;
+  width: 180px; /* Reduced width */
+  margin: 0 auto;
+}
+
+.flower-decoration::before,
+.flower-decoration::after {
+  content: '';
   position: absolute;
-  font-size: 30px;
-  color: #d4af37;
-  opacity: 0.1;
-  right: 40px;
-  bottom: 40px;
-  z-index: 0;
+  top: 50%;
+  width: 60px; /* Shorter lines */
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    #5c432e 30%, 
+    #5c432e 70%, 
+    transparent 100%
+  );
+}
+
+.flower-decoration::before {
+  left: 0;
+  transform: translateX(-20%); /* Much closer to flower */
+}
+
+.flower-decoration::after {
+  right: 0;
+  transform: translateX(20%); /* Much closer to flower */
 }
 
 /* ===============================
@@ -127,43 +109,68 @@
 ================================ */
 @media (max-width: 768px) {
   .about-us-container {
-    padding: 0 20px;
-    margin: 40px auto;
+    padding: 60px 20px; /* Adjusted padding */
+    margin: 0 auto;
   }
 
-  .about-header h1 {
-    font-size: 32px;
+  .about-title {
+    font-size: 36px;
+    margin-bottom: 25px;
   }
 
-  .about-content {
-    padding: 35px;
-  }
-
-  .about-content h2 {
+  .about-heading {
     font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .flower-container {
+    margin: 25px 0 40px 0;
+    height: 60px;
+  }
+
+  .flower-icon {
+    width: 40px;
+    height: 40px;
   }
 
   .about-content p {
     font-size: 17px;
   }
+
+  .flower-decoration {
+    width: 150px; /* Even closer on smaller screens */
+  }
+  
+  .flower-decoration::before,
+  .flower-decoration::after {
+    width: 50px; /* Shorter lines on mobile */
+  }
 }
 
 @media (max-width: 480px) {
   .about-us-container {
-    padding: 0 15px;
-    margin: 30px auto;
+    padding: 40px 15px; /* Adjusted padding */
+    margin: 0 auto;
   }
 
-  .about-header h1 {
-    font-size: 28px;
+  .about-title {
+    font-size: 30px;
+    margin-bottom: 20px;
   }
 
-  .about-content {
-    padding: 25px;
-  }
-
-  .about-content h2 {
+  .about-heading {
     font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  .flower-container {
+    margin: 20px 0 30px 0;
+    height: 50px;
+  }
+
+  .flower-icon {
+    width: 35px;
+    height: 35px;
   }
 
   .about-content p {
@@ -171,7 +178,12 @@
     line-height: 1.7;
   }
 
-  .about-header p {
-    font-size: 16px;
+  .flower-decoration {
+    width: 130px; /* Very close on mobile */
+  }
+  
+  .flower-decoration::before,
+  .flower-decoration::after {
+    width: 40px; /* Very short lines */
   }
 }
